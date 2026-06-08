@@ -1,6 +1,0 @@
-import { Atom } from "../CoreAtom";
-import { Bond } from "../CoreBond";
-export declare class MoleculeSnakeLayoutNode {
-    molecule: (Atom | Bond)[];
-    constructor(molecule: (Atom | Bond)[]);
-}

@@ -14,8 +14,8 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "ketcher-react": "^2.26.0",
-    "ketcher-standalone": "^2.26.0",
+    "ketcher-react": "2.26.0",
+    "ketcher-standalone": "2.26.0",
     "lucide-react": "^0.395.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -40,5 +40,8 @@
     "vite": "^5.3.1",
     "vite-plugin-static-copy": "^1.0.6",
     "vitest": "^1.6.0"
+  },
+  "overrides": {
+    "ketcher-core": "2.26.0"
   }
 }

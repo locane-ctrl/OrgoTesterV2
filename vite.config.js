@@ -107,6 +107,15 @@ export default defineConfig(({ command }) => ({
   // ─── Path Aliases ─────────────────────────────────────────────────────────
   resolve: {
     alias: {
+      // Force ALL imports of 'ketcher-core' to resolve to the single copy
+      // inside ketcher-react/node_modules. Without this, Vite may resolve
+      // ketcher-standalone's import of ketcher-core to a different copy,
+      // creating two separate ketcherProvider singletons. ketcher-react
+      // calls ketcherProvider.setKetcherInstance() on its copy, but
+      // getSmiles()/KetcherLogger uses the other copy where the instance
+      // is still null → "Ketcher needs to be initialized before KetcherLogger
+      // is used".
+      'ketcher-core': path.resolve(__dirname, 'node_modules/ketcher-react/node_modules/ketcher-core'),
       '@': path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, './src/components'),
       '@context': path.resolve(__dirname, './src/context'),

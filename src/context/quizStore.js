@@ -16,6 +16,7 @@ const DUMMY_QUESTIONS = {
       // normalizedExpectedAnswer is populated at runtime by Ketcher
       // canonicalizing this SMILES. See spec-molecule-drawer.md §6.
       expectedAnswer: 'CCO',
+      expectedInchi: 'C2H6O/c1-2-3/h3H,2H2,1H3',
       hints: [
         'Ethanol is a 2-carbon alcohol.',
         'The functional group is a hydroxyl (-OH) attached to the end of the chain.',
@@ -27,11 +28,12 @@ const DUMMY_QUESTIONS = {
       type: 'moleculeDrawer',
       difficulty: 'medium',
       prompt: 'Draw the structure of acetic acid (ethanoic acid).',
-      expectedAnswer: 'CC(=O)O',
+      expectedAnswer: 'CC(O)=O',
+      expectedInchi: 'C2H4O2/c1-2(3)4/h1H3,(H,3,4)',
       hints: [
         'Acetic acid has a carboxylic acid functional group (-COOH).',
         'The parent chain has 2 carbons.',
-        'SMILES: CC(=O)O',
+        'SMILES: CC(O)=O',
       ],
     },
   ],
@@ -173,25 +175,26 @@ const useQuizStore = create(
       /**
        * submitAnswer — Grade a molecule-drawing submission.
        *
-       * Per spec-molecule-drawer.md §6: the comparison is a strict string
-       * equality of TWO canonical SMILES strings. The normalizedExpectedAnswer
-       * must have been set on activeQuestion by the component after Ketcher
-       * canonicalizes the raw expectedAnswer SMILES on mount.
+       * Accepts either:
+       *  - A boolean (true/false) from InChI-based comparison in the component
+       *  - A SMILES string for direct string comparison (fallback path)
        *
-       * This store trusts that the component dispatches a canonical SMILES.
-       *
-       * @param {string} canonicalUserSmiles - Output of ketcher.getSmiles()
+       * @param {boolean|string} answerOrCorrectness
        */
-      submitAnswer: (canonicalUserSmiles) => {
+      submitAnswer: (answerOrCorrectness) => {
         const { activeQuestion, attemptCount, sessionScore } = get();
         if (!activeQuestion) return;
 
-        // Use normalizedExpectedAnswer if the component pre-canonicalized it,
-        // otherwise fall back to the raw expectedAnswer string.
-        const expected =
-          activeQuestion.normalizedExpectedAnswer ?? activeQuestion.expectedAnswer;
-
-        const isCorrect = canonicalUserSmiles === expected;
+        let isCorrect;
+        if (typeof answerOrCorrectness === 'boolean') {
+          // InChI-based comparison already determined correctness
+          isCorrect = answerOrCorrectness;
+        } else {
+          // Fallback: direct SMILES string comparison
+          const expected =
+            activeQuestion.normalizedExpectedAnswer ?? activeQuestion.expectedAnswer;
+          isCorrect = answerOrCorrectness === expected;
+        }
 
         set(
           {

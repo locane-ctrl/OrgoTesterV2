@@ -9,6 +9,16 @@
       content="OrgoTesterV2 — Interactive organic chemistry quizzes covering mechanisms, nomenclature, and stoichiometry."
     />
     <title>OrgoTesterV2 | Organic Chemistry Study App</title>
+    <script>
+      window.global = window;
+      window.process = {
+        env: { DEBUG: undefined },
+        version: '',
+        nextTick: (cb, ...args) => setTimeout(() => cb(...args), 0),
+        pid: 1,
+        browser: true
+      };
+    </script>
   </head>
   <body>
     <div id="root"></div>

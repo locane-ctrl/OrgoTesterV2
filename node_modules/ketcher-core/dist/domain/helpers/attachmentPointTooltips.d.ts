@@ -1,3 +1,0 @@
-import { KetMonomerClass } from "../../application/formatters/types/ket";
-import { AttachmentPointName } from "../types";
-export declare function getAttachmentPointTooltip(monomerClass: KetMonomerClass | 'rnaPreset' | undefined, ap: AttachmentPointName): string | null;
