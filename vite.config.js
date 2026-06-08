@@ -87,6 +87,9 @@ export default defineConfig(({ command }) => ({
     // Ensure .wasm files are never inlined as base64 data URIs; they must
     // remain as separate files so the browser can stream them efficiently.
     assetsInlineLimit: 0,
+    commonjsOptions: {
+      transformMixedEsModules: true
+    },
     rollupOptions: {
       output: {
         // Keep WASM and worker files at the root of the assets output so
