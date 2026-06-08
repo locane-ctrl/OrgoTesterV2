@@ -1,0 +1,5 @@
+import { SVGPathAttributes, BondVectors } from "./constants";
+declare class TripleBondPathRenderer {
+    static preparePaths(bondVectors: BondVectors): SVGPathAttributes[];
+}
+export default TripleBondPathRenderer;

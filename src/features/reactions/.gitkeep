@@ -1,0 +1,3 @@
+// Feature: Reactions
+// Contains multi-step reaction scheme components and the curved-arrow
+// evaluation engine described in docs/spec-reaction-quiz.md §6.

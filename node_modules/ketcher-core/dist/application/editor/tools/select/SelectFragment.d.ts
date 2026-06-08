@@ -1,0 +1,13 @@
+import { SelectBase } from "./SelectBase";
+import { CoreEditor } from "../..";
+import { BaseRenderer } from "../../../render";
+export declare class SelectFragment extends SelectBase {
+    readonly editor: CoreEditor;
+    constructor(editor: CoreEditor);
+    protected createSelectionView(): void;
+    protected onSelectionMove(): void;
+    protected updateSelectionViewParams(): void;
+    protected mousedownEntity(renderer: BaseRenderer, shiftKey?: boolean, modKey?: boolean): void;
+    mouseOverDrawingEntity(event: any): void;
+    mouseLeaveDrawingEntity(event: any): void;
+}

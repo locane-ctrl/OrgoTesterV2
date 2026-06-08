@@ -1,0 +1,3 @@
+// Feature: Nomenclature
+// Contains the nomenclature rendering component and the string-normalization
+// grading engine described in docs/spec-nomenclature-quiz.md §5.

@@ -1,0 +1,14 @@
+import { Vec2 } from "../../../domain/entities";
+import { AttachmentPointName } from "../../../domain/types";
+export declare const MonomerCreationAttachmentPointClickEvent = "MonomerCreationAttachmentPointClick";
+export declare const MonomerCreationComponentStructureUpdateEvent = "MonomerCreationComponentStructureUpdate";
+export declare type AttachmentPointClickData = {
+    attachmentPointName: AttachmentPointName;
+    position: Vec2;
+};
+export declare type RnaPresetComponentKey = 'base' | 'sugar' | 'phosphate';
+export declare type ComponentStructureUpdateData = {
+    componentKey: RnaPresetComponentKey;
+    atomIds: number[];
+    bondIds: number[];
+};

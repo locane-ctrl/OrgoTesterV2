@@ -1,0 +1,2 @@
+// Shared UI primitives (Buttons, Cards, Modals) live here.
+// Each component must be a self-contained, reusable module.

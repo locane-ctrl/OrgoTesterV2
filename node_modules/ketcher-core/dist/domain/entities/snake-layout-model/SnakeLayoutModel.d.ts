@@ -1,0 +1,19 @@
+import { ChainsCollection } from "../monomer-chains/ChainsCollection";
+import { ITwoStrandedSnakeLayoutNode } from "./types";
+import { SnakeLayoutModelChain } from "./SnakeLayoutModelChain";
+import { DrawingEntitiesManager } from "../DrawingEntitiesManager";
+export declare class SnakeLayoutModel {
+    private readonly nodes;
+    chains: SnakeLayoutModelChain[];
+    private readonly monomerToTwoStrandedSnakeLayoutNode;
+    constructor(chainsCollection: ChainsCollection, drawingEntitiesManager: DrawingEntitiesManager, needFillMolecules?: boolean);
+    private addNode;
+    private getSnakeLayoutNodesFromChainNode;
+    private fillSenseNodes;
+    private fillAntisenseNodes;
+    private fillNodes;
+    forEachNode(callback: (node: ITwoStrandedSnakeLayoutNode, index: number) => void): void;
+    forEachChain(callback: (chain: SnakeLayoutModelChain, index: number) => void): void;
+    private fillChains;
+    private fillMolecules;
+}

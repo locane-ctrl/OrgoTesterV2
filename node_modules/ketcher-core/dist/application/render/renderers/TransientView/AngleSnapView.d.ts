@@ -1,0 +1,12 @@
+import { TransientView } from './TransientView';
+import { D3SvgElementSelection } from "../../types";
+import { BaseMonomer, HydrogenBond, PolymerBond } from "../../../../domain/entities";
+export declare type AngleSnapViewParams = {
+    connectedMonomer: BaseMonomer;
+    polymerBond: PolymerBond | HydrogenBond;
+    isBondLengthSnapped: boolean;
+};
+export declare class AngleSnapView extends TransientView {
+    static readonly viewName = "AngleSnapView";
+    static show(transientLayer: D3SvgElementSelection<SVGGElement, void>, params: AngleSnapViewParams): void;
+}

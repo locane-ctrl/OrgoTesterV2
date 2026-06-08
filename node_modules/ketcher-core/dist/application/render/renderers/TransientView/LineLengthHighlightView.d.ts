@@ -1,0 +1,9 @@
+import { TransientView } from './TransientView';
+import { D3SvgElementSelection } from "../../types";
+export declare type LineLengthHighlightViewParams = {
+    currentPosition: number;
+};
+export declare class LineLengthHighlightView extends TransientView {
+    static readonly viewName = "LineLengthHighlightView";
+    static show(transientLayer: D3SvgElementSelection<SVGGElement, void>, params: LineLengthHighlightViewParams): void;
+}

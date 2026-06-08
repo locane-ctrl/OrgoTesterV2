@@ -1,0 +1,9 @@
+import { PolymerBond } from "../entities/PolymerBond";
+import { MonomerToAtomBond } from "../entities/MonomerToAtomBond";
+import { HydrogenBond } from "../entities/HydrogenBond";
+export declare enum Entities {
+    Nucleotide = "Nucleotide",
+    Nucleoside = "Nucleoside",
+    Phosphate = "Phosphate"
+}
+export declare type MonomerBond = PolymerBond | MonomerToAtomBond | HydrogenBond;

@@ -1,0 +1,25 @@
+import { EmptySubChain } from "./monomer-chains/EmptySubChain";
+import { BaseSequenceItemRenderer } from "../../application/render/renderers/sequence/BaseSequenceItemRenderer";
+import { EmptyMonomer } from "./EmptyMonomer";
+import { BaseMonomer } from "./BaseMonomer";
+import { SubChainNode } from "./monomer-chains/types";
+export declare class BackBoneSequenceNode {
+    firstConnectedNode: SubChainNode;
+    secondConnectedNode: SubChainNode;
+    renderer?: BaseSequenceItemRenderer;
+    monomer: EmptyMonomer;
+    constructor(firstConnectedNode: SubChainNode, secondConnectedNode: SubChainNode);
+    get SubChainConstructor(): typeof EmptySubChain;
+    get firstMonomerInNode(): EmptyMonomer | BaseMonomer | import("./Sugar").Sugar;
+    get lastMonomerInNode(): EmptyMonomer | BaseMonomer | import("./Sugar").Sugar | import("./Phosphate").Phosphate;
+    get hovered(): boolean;
+    get selected(): boolean;
+    get monomerItem(): {
+        props: {
+            MonomerNaturalAnalogCode: null;
+        };
+    };
+    get monomers(): BaseMonomer[];
+    setRenderer(renderer: any): void;
+    get modified(): boolean;
+}

@@ -1,0 +1,16 @@
+import { BaseOperation } from "../base";
+import { MonomerCreationState } from "../../../render";
+import { AssignLeavingGroupAtomOperation } from "../..";
+import { AttachmentPointName } from "../../../../domain/types";
+import Restruct from "../../../render/restruct/restruct";
+export declare class RemoveAttachmentPointOperation extends BaseOperation {
+    private readonly monomerCreationState;
+    private readonly attachmentPointName;
+    private readonly potentialLeavingAtoms?;
+    private _assignedAttachmentPoints?;
+    private readonly atomPair;
+    private readonly assignedAttachmentPoints;
+    constructor(monomerCreationState: MonomerCreationState, attachmentPointName: AttachmentPointName, potentialLeavingAtoms?: Set<number> | undefined, _assignedAttachmentPoints?: Map<AttachmentPointName, [number, number]> | undefined);
+    execute(restruct: Restruct): void;
+    invert(): AssignLeavingGroupAtomOperation;
+}

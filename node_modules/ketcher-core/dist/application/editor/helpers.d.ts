@@ -1,0 +1,6 @@
+import { IKetMacromoleculesContent } from "../formatters";
+export declare const parseMonomersLibrary: (monomersDataRaw: string | JSON) => {
+    monomersLibraryParsedJson: any;
+    monomersLibrary: import("../..").MonomerItemType[] & import("../..").AmbiguousMonomerType[];
+};
+export declare const getEmptyMonomersLibraryJson: () => IKetMacromoleculesContent;

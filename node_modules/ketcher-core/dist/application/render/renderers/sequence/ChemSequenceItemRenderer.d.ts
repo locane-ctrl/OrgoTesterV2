@@ -1,0 +1,8 @@
+import { BaseSequenceItemRenderer } from "./BaseSequenceItemRenderer";
+import { D3SvgElementSelection } from "../../types";
+export declare class ChemSequenceItemRenderer extends BaseSequenceItemRenderer {
+    get symbolToDisplay(): string;
+    protected drawModification(): void;
+    show(): void;
+    protected appendRootElement(): D3SvgElementSelection<SVGGElement, void>;
+}

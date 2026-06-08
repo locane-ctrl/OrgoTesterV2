@@ -1,0 +1,17 @@
+import { TransientView } from "./TransientView";
+import { D3SvgElementSelection } from "../../types";
+export declare type SelectionRectangleViewParams = {
+    type: 'rectangle';
+    start: [x: number, y: number];
+    width: number;
+    height: number;
+};
+export declare type SelectionLassoViewParams = {
+    type: 'lasso';
+    path: [x: number, y: number][];
+};
+export declare type SelectionViewParams = SelectionRectangleViewParams | SelectionLassoViewParams;
+export declare class SelectionView extends TransientView {
+    static show(transientLayer: D3SvgElementSelection<SVGGElement, void>, params: SelectionViewParams): void;
+    static readonly viewName = "SelectionView";
+}

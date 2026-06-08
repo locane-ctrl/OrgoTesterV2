@@ -1,0 +1,11 @@
+import { DrawingEntity } from "./DrawingEntity";
+import { Vec2 } from "./vec2";
+import { RxnPlusRenderer } from "../../application/render/renderers/RxnPlusRenderer";
+import { initiallySelectedType } from "./BaseMicromoleculeEntity";
+export declare class RxnPlus extends DrawingEntity {
+    initiallySelected?: initiallySelectedType | undefined;
+    renderer?: RxnPlusRenderer;
+    constructor(position: Vec2, initiallySelected?: initiallySelectedType | undefined);
+    get center(): Vec2;
+    setRenderer(renderer: RxnPlusRenderer): void;
+}

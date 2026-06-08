@@ -1,0 +1,1 @@
+export declare function getLabelRenderModeForIndigo(ketcherId: string): any;

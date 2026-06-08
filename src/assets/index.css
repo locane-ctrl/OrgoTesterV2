@@ -1,0 +1,6 @@
+/* Global styles and CSS custom properties.
+ * Import Tailwind directives here when Tailwind is configured.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

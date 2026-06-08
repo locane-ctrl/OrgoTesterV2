@@ -1,0 +1,24 @@
+import { BaseRenderer } from "./BaseRenderer";
+import { D3SvgElementSelection } from "../types";
+import { Vec2 } from "../../../domain/entities";
+import { MultitailArrow } from "../../../domain/entities/CoreMultitailArrow";
+export declare class MultitailArrowRenderer extends BaseRenderer {
+    arrow: MultitailArrow;
+    private selectionElement;
+    constructor(arrow: MultitailArrow);
+    get selectionPoints(): Vec2[];
+    getReferencePositionsArray(): Array<Vec2>;
+    private getReferencePositions;
+    private getArrowPaths;
+    private getSelectionContour;
+    show(): void;
+    protected appendHover(): D3SvgElementSelection<SVGUseElement, void> | void;
+    protected appendHoverAreaElement(): void;
+    drawSelection(): void;
+    appendSelection(): void;
+    removeSelection(): void;
+    move(): void;
+    protected removeHover(): void;
+    remove(): void;
+    moveSelection(): void;
+}

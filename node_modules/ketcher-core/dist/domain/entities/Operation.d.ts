@@ -1,0 +1,24 @@
+import { RenderersManager } from "../../application/render/renderers/RenderersManager";
+import { BaseMonomer } from "./BaseMonomer";
+import { PolymerBond } from "./PolymerBond";
+import { Atom } from "./CoreAtom";
+import { Bond } from "./CoreBond";
+import { MonomerToAtomBond } from "./MonomerToAtomBond";
+import { RxnArrow } from "./CoreRxnArrow";
+import { MultitailArrow } from "./CoreMultitailArrow";
+import { RxnPlus } from "./CoreRxnPlus";
+export interface Operation {
+    priority?: number;
+    monomer?: BaseMonomer;
+    atom?: Atom;
+    bond?: Bond;
+    monomerToAtomBond?: MonomerToAtomBond;
+    polymerBond?: PolymerBond;
+    rxnArrow?: RxnArrow;
+    multitailArrow?: MultitailArrow;
+    rxnPlus?: RxnPlus;
+    execute(renderersManager: RenderersManager): void;
+    invert(renderersManager: RenderersManager): void;
+    executeAfterAllOperations?(renderersManager: RenderersManager): void;
+    invertAfterAllOperations?(renderersManager: RenderersManager): void;
+}

@@ -1,0 +1,7 @@
+import { Vec2 } from "../../../../domain/entities";
+export declare class EllipticalArcFilledTriangleArrowRenderer {
+    static preparePaths(start: Vec2, arrowLength: number, arrowAngle: number, height: number): {
+        d: string;
+        attrs: {};
+    }[];
+}

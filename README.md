@@ -1,7 +1,5 @@
 An interactive, web-based chemistry study application designed to help students master organic chemistry mechanisms, nomenclature, and stoichiometry through progressive hint-based quizzes. Tailored to OpenStax's Organic Chemistry textbook.
 
-An interactive, web-based chemistry study application designed to help students master organic chemistry mechanisms, nomenclature, and stoichiometry through progressive hint-based quizzes. Tailored to OpenStax's Organic Chemistry textbook.
-
 ## Technology Stack & Dependencies
 
 The application is built entirely as a client-side, serverless web application architecture designed for deployment on static hosting environments like GitHub Pages.
@@ -60,3 +58,9 @@ The project enforces a strict feature-isolated directory structure to ensure mod
 └── README.md                  # Master System Blueprint and Architectural Contract
 ```
 
+> **6. UI/UX Aesthetic Standards:** The application must strictly adhere to a modern, minimalist dark-theme design language. Agents must use the following Tailwind CSS conventions to ensure visual consistency:
+> * **Global Theme:** Deep dark mode. Use `bg-slate-900` for main application backgrounds and `bg-slate-800` for elevated surface elements (cards, modals, panels). Pure black (`bg-black`) is strictly prohibited to prevent high-contrast eye strain.
+> * **The Ketcher Canvas Wrapper:** Because Ketcher renders a stark white canvas, its wrapper must be treated as a focal point. Use `bg-white rounded-xl overflow-hidden ring-4 ring-slate-800/50` to frame it elegantly like a sheet of paper.
+> * **Typography & Accents:** Use `text-slate-100` for primary reading and `text-slate-400` for secondary details or hints. Primary action buttons should use a muted, elegant tech accent (`bg-indigo-600 hover:bg-indigo-500 text-white`). 
+> * **Borders & Depth:** Rely on subtle, semi-transparent borders (e.g., `border border-white/10` or `border-slate-700`) and smooth radii (`rounded-xl` or `rounded-2xl`) to define hierarchy instead of heavy drop-shadows.
+> * **Micro-Interactions:** All interactive elements (buttons, inputs, cards) must include smooth transitions using Tailwind's `transition-all duration-200 ease-in-out` to ensure interactions feel premium and fluid. Use `lucide-react` icons with `text-emerald-400` for success states and `text-red-400` for errors.

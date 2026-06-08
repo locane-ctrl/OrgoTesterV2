@@ -1,0 +1,12 @@
+import { BaseOperation } from "../base";
+import { MonomerCreationState, ReStruct } from "../../../render";
+import { RemoveAttachmentPointOperation } from "../..";
+export declare class AssignLeavingGroupAtomOperation extends BaseOperation {
+    private readonly monomerCreationState;
+    private readonly atomId;
+    private attachmentPointName;
+    private potentialLeavingAtoms;
+    constructor(monomerCreationState: MonomerCreationState, atomId: number);
+    execute(restruct: ReStruct): void;
+    invert(): RemoveAttachmentPointOperation;
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mech-001",
+    "type": "mechanism",
+    "difficulty": "medium",
+    "prompt": "Draw the complete SN2 mechanism for the reaction of bromomethane with hydroxide ion. Show the curved arrow for the nucleophilic attack and the departure of the leaving group in a single concerted step.",
+    "startingMaterialSmiles": "CBr",
+    "reagentLabel": "OH⁻",
+    "expectedKetcherJson": null,
+    "hints": [
+      "SN2 reactions occur in a single concerted step — no intermediates.",
+      "Draw a curved arrow from the lone pair on OH⁻ to the carbon bearing the Br.",
+      "Draw a second curved arrow from the C–Br bond toward Br, showing departure of bromide."
+    ]
+  },
+  {
+    "id": "mech-002",
+    "type": "mechanism",
+    "difficulty": "hard",
+    "prompt": "Draw the complete E2 elimination mechanism for 2-bromopropane reacting with sodium ethoxide. Show all curved arrows for proton abstraction and leaving group departure in the concerted step.",
+    "startingMaterialSmiles": "CC(Br)C",
+    "reagentLabel": "NaOEt",
+    "expectedKetcherJson": null,
+    "hints": [
+      "E2 is a concerted, one-step mechanism requiring anti-periplanar geometry.",
+      "The base abstracts a β-hydrogen. Draw a curved arrow from the C–H bond to the base.",
+      "Show the π bond forming (C=C) and the Br departing simultaneously."
+    ]
+  }
+]

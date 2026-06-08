@@ -1,0 +1,16 @@
+import { ISnakeLayoutModelRow, ITwoStrandedSnakeLayoutNode } from "./types";
+import { EmptySnakeLayoutNode } from "./EmptySnakeLayoutNode";
+import { MoleculeSnakeLayoutNode } from "./MoleculeSnakeLayoutNode";
+export declare class SnakeLayoutModelChain {
+    private readonly rows;
+    get lastRow(): ISnakeLayoutModelRow;
+    get lastNode(): ITwoStrandedSnakeLayoutNode | MoleculeSnakeLayoutNode | EmptySnakeLayoutNode;
+    get firstRow(): ISnakeLayoutModelRow;
+    get firstNode(): ITwoStrandedSnakeLayoutNode | MoleculeSnakeLayoutNode | EmptySnakeLayoutNode;
+    get nodes(): (ITwoStrandedSnakeLayoutNode | MoleculeSnakeLayoutNode | EmptySnakeLayoutNode)[];
+    get length(): number;
+    get rowsLength(): number;
+    addRow(row: ISnakeLayoutModelRow): void;
+    forEachNode(callback: (node: ITwoStrandedSnakeLayoutNode | MoleculeSnakeLayoutNode | EmptySnakeLayoutNode, nodeIndex: number) => void): void;
+    forEachRow(callback: (row: ISnakeLayoutModelRow, rowIndex: number) => void): void;
+}

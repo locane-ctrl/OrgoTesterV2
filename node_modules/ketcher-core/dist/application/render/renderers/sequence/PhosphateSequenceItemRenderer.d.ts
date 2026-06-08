@@ -1,0 +1,7 @@
+import { BaseSequenceItemRenderer } from "./BaseSequenceItemRenderer";
+import { D3SvgElementSelection } from "../../types";
+export declare class PhosphateSequenceItemRenderer extends BaseSequenceItemRenderer {
+    get symbolToDisplay(): string;
+    protected drawModification(): void;
+    protected appendRootElement(): D3SvgElementSelection<SVGGElement, void>;
+}

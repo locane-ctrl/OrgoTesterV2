@@ -1,0 +1,2 @@
+// Vitest automated test suites for chemical grading validation.
+// See docs/spec-*.md for the grading rules each test must cover.

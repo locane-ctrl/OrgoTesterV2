@@ -1,0 +1,64 @@
+import { BaseRenderer } from "./BaseRenderer";
+import { Atom } from "../../../domain/entities/CoreAtom";
+import { Vec2 } from "../../../domain/entities";
+export declare class AtomRenderer extends BaseRenderer {
+    atom: Atom;
+    private selectionElement?;
+    private textElement?;
+    private radicalElement?;
+    private cipLabelElement?;
+    private badValenceElement?;
+    private cipLabelElementBBox?;
+    private cipTextElementBBox?;
+    constructor(atom: Atom);
+    get scaledPosition(): Vec2;
+    get center(): Vec2;
+    private appendRootElement;
+    private appendBody;
+    private appendSelectionContour;
+    /**
+     * Updates the width and height of the SelectionContour
+     */
+    private updateSelectionContour;
+    protected appendHover(): any;
+    /**
+     * Override redrawHover to handle AtomRenderer's opacity-based hover visibility.
+     * AtomRenderer creates hover elements hidden (opacity 0) and toggles visibility
+     * via showHover/hideHover, unlike other renderers that add/remove elements.
+     * When the model layer turns on hover (e.g., Fragment selection tool), we need
+     * to explicitly show the hover element after it's created/returned by appendHover.
+     */
+    redrawHover(): void;
+    showHover(): void;
+    hideHover(): void;
+    private get shouldHydrogenBeOnLeft();
+    get labelText(): string;
+    private get isAtomTerminal();
+    get isLabelVisible(): boolean;
+    get labelLength(): number;
+    private get labelColor();
+    get labelBBoxes(): DOMRect[];
+    get labelBoundingBox(): DOMRect | undefined;
+    get shouldDisplayHydrogen(): boolean;
+    private appendLabel;
+    private removeLabel;
+    redrawLabel(): void;
+    appendSelection(): void;
+    removeSelection(): void;
+    drawSelection(): void;
+    moveSelection(): void;
+    private appendCharge;
+    private appendRadical;
+    private appendExplicitValence;
+    private appendExplicitIsotope;
+    private appendAtomProperties;
+    private appendBadValenceWarning;
+    show(): void;
+    private appendCIPLabel;
+    private positionCIPLabel;
+    private bisectLargestSector;
+    move(): void;
+    remove(): void;
+    protected appendHoverAreaElement(): void;
+    protected removeHover(): void;
+}

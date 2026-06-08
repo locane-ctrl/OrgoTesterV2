@@ -1,0 +1,22 @@
+import { ChainsCollection } from "../monomer-chains/ChainsCollection";
+import { Matrix } from "./Matrix";
+import { PolymerBond } from "../PolymerBond";
+import { Connection } from "./Connection";
+import { Cell } from "./Cell";
+interface MatrixConfig {
+    initialMatrix: Matrix<Cell>;
+}
+export declare class CanvasMatrix {
+    chainsCollection: ChainsCollection;
+    private readonly matrixConfig;
+    private readonly matrix;
+    private readonly initialMatrixWidth;
+    private readonly monomerToCell;
+    polymerBondToCells: Map<PolymerBond, Cell[]>;
+    polymerBondToConnections: Map<PolymerBond, Connection[]>;
+    constructor(chainsCollection: ChainsCollection, matrixConfig?: MatrixConfig);
+    private fillConnectionsOffset;
+    private fillRightConnectionsOffset;
+    private fillCells;
+}
+export {};

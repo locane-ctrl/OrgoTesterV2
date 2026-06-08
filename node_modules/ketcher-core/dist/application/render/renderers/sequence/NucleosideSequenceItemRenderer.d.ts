@@ -1,0 +1,7 @@
+import { RNASequenceItemRenderer } from './RNASequenceItemRenderer';
+import { D3SvgElementSelection } from "../../types";
+export declare class NucleosideSequenceItemRenderer extends RNASequenceItemRenderer {
+    private nucleosideCircleElement?;
+    protected drawModification(): void;
+    protected appendRootElement(): D3SvgElementSelection<SVGGElement, void>;
+}

@@ -1,0 +1,9 @@
+import { Vec2 } from "../../../../domain/entities";
+export declare class FailedArrowRenderer {
+    static preparePaths(start: Vec2, arrowLength: number, arrowAngle: number): {
+        d: string;
+        attrs: {
+            fill: string;
+        };
+    }[];
+}

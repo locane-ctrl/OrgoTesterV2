@@ -1,0 +1,78 @@
+/// <reference types="node" />
+import { Subscription } from 'subscription';
+import { FormatterFactory } from './formatters';
+import { GenerateImageOptions, StructService, CalculateData, type CalculateResult } from "../domain/services";
+import { Editor } from './editor';
+import { Indigo } from "./indigo";
+import { MolfileFormat } from "../domain/serializers";
+import { Struct } from "../domain/entities";
+import { EventEmitter } from 'events';
+import { LogSettings } from "../utilities";
+import { ExportImageParams, SupportedImageFormats, SupportedModes, UpdateMonomersLibraryParams } from "./ketcher.types";
+declare type SetMoleculeOptions = {
+    position?: {
+        x: number;
+        y: number;
+    };
+    needZoom?: boolean;
+};
+export declare class Ketcher {
+    #private;
+    _id: string;
+    logging: LogSettings;
+    structService: StructService;
+    _indigo: Indigo;
+    changeEvent: Subscription;
+    libraryUpdateEvent: Subscription;
+    get editor(): Editor;
+    get eventBus(): EventEmitter;
+    constructor(structService: StructService, formatterFactory: FormatterFactory);
+    get id(): string;
+    get formatterFactory(): FormatterFactory;
+    get indigo(): Indigo;
+    get settings(): {};
+    addEditor(editor: Editor): void;
+    setSettings(settings: Record<string, string | boolean>): any;
+    getSmiles(isExtended?: boolean): Promise<string>;
+    getExtendedSmiles(): Promise<string>;
+    getMolfile(molfileFormat?: MolfileFormat): Promise<string>;
+    getIdt(): Promise<string>;
+    getAxoLabs(): Promise<string>;
+    getRxn(molfileFormat?: MolfileFormat): Promise<string>;
+    getKet(): Promise<string>;
+    getFasta(): Promise<string>;
+    getSequence(format?: '1-letter' | '3-letter'): Promise<string>;
+    getSmarts(): Promise<string>;
+    getCml(): Promise<string>;
+    getSdf(molfileFormat?: MolfileFormat): Promise<string>;
+    getRdf(molfileFormat?: MolfileFormat): Promise<string>;
+    getCDXml(): Promise<string>;
+    getCDX(): Promise<string>;
+    getInchi(withAuxInfo?: boolean): Promise<string>;
+    getInChIKey(): Promise<string>;
+    containsReaction(): boolean;
+    isQueryStructureSelected(): boolean;
+    setMolecule(structStr: string, options?: SetMoleculeOptions): Promise<void | undefined>;
+    setHelm(helmStr: string): Promise<void | undefined>;
+    addFragment(structStr: string, options?: SetMoleculeOptions): Promise<void | undefined>;
+    circularLayoutMonomers(): Promise<void>;
+    layout(): Promise<void>;
+    calculate(options?: CalculateData): Promise<CalculateResult>;
+    /**
+     * @param {number} value - in a range [ZoomTool.instance.MINZOOMSCALE, ZoomTool.instance.MAXZOOMSCALE]
+     */
+    setZoom(value: number): void;
+    setMode(mode: SupportedModes): void;
+    exportImage(format: SupportedImageFormats, params?: ExportImageParams): void;
+    recognize(image: Blob, version?: string): Promise<Struct>;
+    generateImage(data: string, options?: GenerateImageOptions): Promise<Blob>;
+    reinitializeIndigo(structService: StructService): void;
+    sendCustomAction(name: string): void;
+    ensureMonomersLibraryDataInKetFormat(rawMonomersData: string | JSON, params?: UpdateMonomersLibraryParams): Promise<string>;
+    ensureMonomersLibraryDataInSdfFormat(rawMonomersData: string | JSON, params?: UpdateMonomersLibraryParams): Promise<string>;
+    updateMonomersLibrary(rawMonomersData: string | JSON, params?: UpdateMonomersLibraryParams): Promise<void>;
+    replaceMonomersLibrary(rawMonomersData: string | JSON, params?: UpdateMonomersLibraryParams): Promise<void>;
+    switchToMacromoleculesMode(): void;
+    switchToMoleculesMode(): void;
+}
+export {};

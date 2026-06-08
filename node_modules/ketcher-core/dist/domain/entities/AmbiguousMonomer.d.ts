@@ -1,0 +1,35 @@
+import { BaseMonomer } from './BaseMonomer';
+import { SubChainNode } from "./monomer-chains/types";
+import { Vec2 } from "./vec2";
+import { KetAmbiguousMonomerTemplateSubType, KetMonomerClass } from "../../application/formatters";
+import { IVariantMonomer } from "./types";
+import { AmbiguousMonomerType, AttachmentPointName } from "../types";
+import { Chem } from "./Chem";
+import { Peptide } from "./Peptide";
+import { Phosphate } from "./Phosphate";
+import { Sugar } from "./Sugar";
+import { RNABase } from "./RNABase";
+import { UnsplitNucleotide } from "./UnsplitNucleotide";
+export declare const DEFAULT_VARIANT_MONOMER_LABEL = "%";
+export declare const MONOMER_CLASS_TO_CONSTRUCTOR: {
+    CHEM: typeof Chem;
+    AminoAcid: typeof Peptide;
+    Phosphate: typeof Phosphate;
+    Sugar: typeof Sugar;
+    Base: typeof RNABase;
+    RNA: typeof UnsplitNucleotide;
+};
+export declare class AmbiguousMonomer extends BaseMonomer implements IVariantMonomer {
+    variantMonomerItem: AmbiguousMonomerType;
+    monomers: BaseMonomer[];
+    monomerClass: KetMonomerClass;
+    subtype: KetAmbiguousMonomerTemplateSubType;
+    constructor(variantMonomerItem: AmbiguousMonomerType, position?: Vec2, generateId?: boolean);
+    static getMonomerClass(monomers: BaseMonomer[]): KetMonomerClass;
+    private static getAttachmentPoints;
+    get monomerCaps(): Partial<Record<AttachmentPointName, string>> | undefined;
+    getValidSourcePoint(_secondMonomer?: BaseMonomer): any;
+    getValidTargetPoint(_firstMonomer: BaseMonomer): any;
+    get SubChainConstructor(): any;
+    isMonomerTypeDifferentForChaining(monomerToChain: SubChainNode): any;
+}

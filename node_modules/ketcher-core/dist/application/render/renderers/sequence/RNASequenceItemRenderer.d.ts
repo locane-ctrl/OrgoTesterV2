@@ -1,0 +1,18 @@
+import { BaseSequenceItemRenderer } from "./BaseSequenceItemRenderer";
+import { Nucleoside, Nucleotide, Vec2 } from "../../../../domain/entities";
+import { Chain } from "../../../../domain/entities/monomer-chains/Chain";
+import { ITwoStrandedChainItem } from "../../../../domain/entities/monomer-chains/ChainsCollection";
+export declare abstract class RNASequenceItemRenderer extends BaseSequenceItemRenderer {
+    node: Nucleoside | Nucleotide;
+    monomerSize: {
+        width: number;
+        height: number;
+    };
+    scaledMonomerPosition: Vec2;
+    constructor(node: Nucleoside | Nucleotide, _firstNodeInChainPosition: Vec2, _monomerIndexInChain: number, _isLastMonomerInChain: boolean, _chain: Chain, _nodeIndexOverall: number, _editingNodeIndexOverall: number, monomerSize: {
+        width: number;
+        height: number;
+    }, scaledMonomerPosition: Vec2, _twoStrandedNode: ITwoStrandedChainItem, _previousRowsWithAntisense?: number);
+    get symbolToDisplay(): string;
+    protected drawCommonModification(node: Nucleoside | Nucleotide): void;
+}

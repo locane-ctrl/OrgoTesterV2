@@ -1,0 +1,41 @@
+[
+  {
+    "id": "nom-001",
+    "type": "nomenclature",
+    "difficulty": "easy",
+    "prompt": "Provide the correct IUPAC name for the structure shown below.",
+    "structureSmiles": "CCO",
+    "expectedAnswer": ["ethanol", "ethyl alcohol"],
+    "hints": [
+      "Count the number of carbons in the longest chain.",
+      "The suffix '-ol' indicates the presence of a hydroxyl group.",
+      "The parent chain has 2 carbons, giving the prefix 'eth-'."
+    ]
+  },
+  {
+    "id": "nom-002",
+    "type": "nomenclature",
+    "difficulty": "medium",
+    "prompt": "Provide the correct IUPAC name for the structure shown below.",
+    "structureSmiles": "CC(C)O",
+    "expectedAnswer": ["2-propanol", "isopropanol", "propan-2-ol"],
+    "hints": [
+      "The longest chain containing the OH group has 3 carbons.",
+      "Number the chain to give the OH group the lowest locant.",
+      "The OH is on carbon 2 of a propane backbone."
+    ]
+  },
+  {
+    "id": "nom-003",
+    "type": "nomenclature",
+    "difficulty": "hard",
+    "prompt": "Provide the correct IUPAC name for the structure shown below.",
+    "structureSmiles": "CC(=O)OCC",
+    "expectedAnswer": ["ethyl acetate", "ethyl ethanoate"],
+    "hints": [
+      "This structure contains an ester functional group (-COO-).",
+      "Name the alkyl group attached to the oxygen first.",
+      "The acid portion is acetic acid (ethanoic acid)."
+    ]
+  }
+]

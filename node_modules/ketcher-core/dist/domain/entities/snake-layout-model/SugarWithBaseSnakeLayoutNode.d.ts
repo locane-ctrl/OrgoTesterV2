@@ -1,0 +1,8 @@
+import { AmbiguousMonomer, RNABase, Sugar } from "./..";
+import { ISnakeLayoutMonomersNode } from './types';
+export declare class SugarWithBaseSnakeLayoutNode implements ISnakeLayoutMonomersNode {
+    sugar: Sugar;
+    base: RNABase | AmbiguousMonomer;
+    constructor(sugar: Sugar, base: RNABase | AmbiguousMonomer);
+    get monomers(): (Sugar | RNABase | AmbiguousMonomer)[];
+}

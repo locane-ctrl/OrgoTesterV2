@@ -1,0 +1,12 @@
+import { TransientView } from './TransientView';
+import { D3SvgElementSelection } from "../../types";
+import { BaseMonomer } from "../../../../domain/entities";
+import { MonomersAlignment } from "../../../editor";
+export declare type DistanceSnapViewParams = {
+    alignment: MonomersAlignment | undefined;
+    alignedMonomers: BaseMonomer[] | undefined;
+};
+export declare class DistanceSnapView extends TransientView {
+    static readonly viewName = "DistanceSnapView";
+    static show(transientLayer: D3SvgElementSelection<SVGGElement, void>, params: DistanceSnapViewParams): void;
+}

@@ -1,0 +1,7 @@
+import { BaseSequenceItemRenderer } from "./BaseSequenceItemRenderer";
+import { D3SvgElementSelection } from "../../types";
+export declare class EmptySequenceItemRenderer extends BaseSequenceItemRenderer {
+    get symbolToDisplay(): string;
+    protected drawModification(): void;
+    protected appendRootElement(): D3SvgElementSelection<SVGGElement, void>;
+}

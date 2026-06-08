@@ -1,0 +1,5 @@
+import { SVGPathAttributes, BondVectors } from "./constants";
+declare class SingleUpBondPathRenderer {
+    static preparePaths(bondVectors: BondVectors): SVGPathAttributes[];
+}
+export default SingleUpBondPathRenderer;

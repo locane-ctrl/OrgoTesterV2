@@ -1,0 +1,12 @@
+import { TransientView } from './TransientView';
+import { D3SvgElementSelection } from "../../types";
+import { BaseMonomer, Vec2 } from "../../../../domain/entities";
+export declare type GroupCenterSnapViewParams = {
+    isVertical: boolean;
+    absoluteSnapPosition: Vec2;
+    monomerPair: [BaseMonomer, BaseMonomer];
+};
+export declare class GroupCentersnapView extends TransientView {
+    static readonly viewName = "GroupCentersnapView";
+    static show(transientLayer: D3SvgElementSelection<SVGGElement, void>, params: GroupCenterSnapViewParams): void;
+}

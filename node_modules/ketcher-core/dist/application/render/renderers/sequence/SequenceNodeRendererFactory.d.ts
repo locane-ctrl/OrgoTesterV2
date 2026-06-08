@@ -1,0 +1,8 @@
+import { Vec2 } from "../../../../domain/entities";
+import { BaseMonomerRenderer, BaseSequenceItemRenderer } from "../..";
+import { SequenceNode } from "../../../../domain/entities/monomer-chains/types";
+import { Chain } from "../../../../domain/entities/monomer-chains/Chain";
+import { ITwoStrandedChainItem } from "../../../../domain/entities/monomer-chains/ChainsCollection";
+export declare class SequenceNodeRendererFactory {
+    static fromNode(node: SequenceNode, firstMonomerInChainPosition: Vec2, monomerIndexInChain: number, isLastMonomerInChain: boolean, chain: Chain, nodeIndexOverall: number, editingNodeIndexOverall: number, twoStrandedNode: ITwoStrandedChainItem, renderer?: BaseMonomerRenderer | BaseSequenceItemRenderer, previousRowsWithAntisense?: number): BaseSequenceItemRenderer;
+}

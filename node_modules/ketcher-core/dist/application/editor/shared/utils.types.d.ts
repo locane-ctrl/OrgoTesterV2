@@ -1,0 +1,3 @@
+import { Bond } from "../../../domain/entities/bond";
+export declare type BondAtoms = Pick<Bond, 'begin' | 'end'>;
+export declare type FlipDirection = 'horizontal' | 'vertical';

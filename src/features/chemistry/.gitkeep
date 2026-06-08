@@ -1,0 +1,4 @@
+// Feature: Chemistry Engine
+// Contains Ketcher engine wrappers, SMILES parsing utilities, and
+// canonical SMILES normalization logic for the grading engine.
+// See docs/spec-molecule-drawer.md §6 for grading rules.

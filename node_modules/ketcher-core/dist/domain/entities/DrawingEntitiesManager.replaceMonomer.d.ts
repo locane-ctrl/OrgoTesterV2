@@ -1,0 +1,5 @@
+import { BaseMonomer } from "./BaseMonomer";
+import { MonomerOrAmbiguousType } from "../types";
+import { Command } from "./Command";
+import { DrawingEntitiesManager } from './DrawingEntitiesManager';
+export declare function replaceMonomer(drawingEntitiesManager: DrawingEntitiesManager, monomer: BaseMonomer, newMonomerItem: MonomerOrAmbiguousType): Command;

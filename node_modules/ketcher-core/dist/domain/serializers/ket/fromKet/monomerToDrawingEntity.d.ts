@@ -1,0 +1,23 @@
+import { IKetMacromoleculesContent, IKetMonomerNode, IKetMonomerTemplate, IKetAmbiguousMonomerNode, IKetAmbiguousMonomerTemplate } from "../../../../application/formatters/types/ket";
+import { Struct } from "../../../entities";
+import { DrawingEntitiesManager } from "../../../entities/DrawingEntitiesManager";
+export declare function templateToMonomerProps(template: IKetMonomerTemplate): {
+    hidden?: true | undefined;
+    aliasAxoLabs?: string | undefined;
+    aliasHELM?: string | undefined;
+    id: string;
+    Name: string;
+    MonomerNaturalAnalogCode: string;
+    MonomerNaturalAnalogThreeLettersCode: string;
+    MonomerName: string;
+    MonomerFullName: string | undefined;
+    MonomerType: string | undefined;
+    MonomerClass: import("../../../../application/formatters/types/ket").KetMonomerClass | undefined;
+    MonomerCaps: {};
+    idtAliases: import("../../../../application/formatters/types/ket").IKetIdtAliases | undefined;
+    unresolved: boolean | undefined;
+    modificationTypes: string[] | undefined;
+};
+export declare function monomerToDrawingEntity(node: IKetMonomerNode, template: IKetMonomerTemplate, struct: Struct, drawingEntitiesManager: DrawingEntitiesManager): import("../../../entities").Command;
+export declare function createMonomersForVariantMonomer(variantMonomerTemplate: IKetAmbiguousMonomerTemplate, parsedFileContent: IKetMacromoleculesContent): (import("../../../entities").Chem | import("../../../entities").Sugar | import("../../../entities").Peptide | import("../../../entities").RNABase | import("../../../entities").Phosphate)[];
+export declare function variantMonomerToDrawingEntity(drawingEntitiesManager: DrawingEntitiesManager, node: IKetAmbiguousMonomerNode, template: IKetAmbiguousMonomerTemplate, parsedFileContent: IKetMacromoleculesContent): import("../../../entities").Command;

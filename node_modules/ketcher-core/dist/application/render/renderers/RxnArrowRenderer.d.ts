@@ -1,0 +1,25 @@
+import { BaseRenderer } from "./BaseRenderer";
+import { D3SvgElementSelection } from "../types";
+import { RxnArrow } from "../../../domain/entities/CoreRxnArrow";
+export declare class RxnArrowRenderer extends BaseRenderer {
+    arrow: RxnArrow;
+    private selectionElement;
+    constructor(arrow: RxnArrow);
+    private get scaledPosition();
+    getArrowParams(): {
+        length: number;
+        angle: number;
+    };
+    private generateArrowPath;
+    private getSelectionContour;
+    show(): void;
+    protected appendHover(): D3SvgElementSelection<SVGUseElement, void> | void;
+    protected appendHoverAreaElement(): void;
+    drawSelection(): void;
+    appendSelection(): void;
+    removeSelection(): void;
+    move(): void;
+    protected removeHover(): void;
+    remove(): void;
+    moveSelection(): void;
+}

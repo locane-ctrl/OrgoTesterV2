@@ -1,0 +1,15 @@
+import { BaseMonomer, Chain } from "./..";
+import { MoleculeSnakeLayoutNode } from "./MoleculeSnakeLayoutNode";
+import { EmptySnakeLayoutNode } from "./EmptySnakeLayoutNode";
+export interface ISnakeLayoutMonomersNode {
+    monomers: BaseMonomer[];
+}
+export interface ITwoStrandedSnakeLayoutNode {
+    senseNode?: ISnakeLayoutMonomersNode;
+    antisenseNode?: ISnakeLayoutMonomersNode;
+    chain: Chain;
+}
+export interface ISnakeLayoutModelRow {
+    snakeLayoutModelItems: (ITwoStrandedSnakeLayoutNode | MoleculeSnakeLayoutNode | EmptySnakeLayoutNode)[];
+}
+export declare function isTwoStrandedSnakeLayoutNode(node: ITwoStrandedSnakeLayoutNode | MoleculeSnakeLayoutNode | EmptySnakeLayoutNode): node is ITwoStrandedSnakeLayoutNode;

@@ -1,0 +1,3 @@
+import { ChemSequenceItemRenderer, EmptySequenceItemRenderer, NucleosideSequenceItemRenderer, NucleotideSequenceItemRenderer, PeptideSequenceItemRenderer, PhosphateSequenceItemRenderer, UnresolvedMonomerSequenceItemRenderer, UnsplitNucleotideSequenceItemRenderer } from "../..";
+import { AmbiguousSequenceItemRenderer } from "./AmbiguousSequenceItemRenderer";
+export declare type SequenceItemRenderer = NucleotideSequenceItemRenderer | NucleosideSequenceItemRenderer | EmptySequenceItemRenderer | ChemSequenceItemRenderer | PeptideSequenceItemRenderer | PhosphateSequenceItemRenderer | UnresolvedMonomerSequenceItemRenderer | UnsplitNucleotideSequenceItemRenderer | AmbiguousSequenceItemRenderer;

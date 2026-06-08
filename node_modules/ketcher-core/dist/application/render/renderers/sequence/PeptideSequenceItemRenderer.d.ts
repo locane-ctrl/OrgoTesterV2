@@ -1,0 +1,9 @@
+import { BaseSequenceItemRenderer } from "./BaseSequenceItemRenderer";
+import { D3SvgElementSelection } from "../../types";
+export declare class PeptideSequenceItemRenderer extends BaseSequenceItemRenderer {
+    #private;
+    get symbolToDisplay(): string;
+    private drawLine;
+    protected drawModification(): void;
+    protected appendRootElement(): D3SvgElementSelection<SVGGElement, void>;
+}

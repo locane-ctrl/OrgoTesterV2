@@ -1,0 +1,16 @@
+import { TransientView } from './TransientView';
+import { D3SvgElementSelection } from "../../types";
+import { IRnaPreset } from "../../../editor";
+import { MonomerItemType } from "../../../../domain/types";
+import { BaseMonomer, Vec2 } from "../../../../domain/entities";
+export declare type AutochainPreviewViewParams = {
+    monomerOrRnaItem: MonomerItemType | IRnaPreset;
+    position: Vec2;
+    selectedMonomerToConnect?: BaseMonomer;
+};
+export declare class AutochainPreviewView extends TransientView {
+    static readonly viewName = "AutochainPreviewView";
+    private static showSingleMonomerPreview;
+    private static showBondPreview;
+    static show(transientLayer: D3SvgElementSelection<SVGGElement, void>, params: AutochainPreviewViewParams): void;
+}

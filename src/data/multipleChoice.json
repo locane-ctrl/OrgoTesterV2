@@ -1,0 +1,38 @@
+[
+  {
+    "id": "mc-001",
+    "type": "multipleChoice",
+    "difficulty": "easy",
+    "prompt": "Which of the following is the correct definition of electronegativity?",
+    "options": [
+      "The energy required to remove an electron from a gaseous atom.",
+      "The ability of an atom in a bond to attract the shared electrons toward itself.",
+      "The energy released when an electron is added to a neutral gaseous atom.",
+      "The measure of the total number of electrons in an atom's outermost shell."
+    ],
+    "expectedAnswer": 1,
+    "hints": [
+      "Think about what happens to shared electrons in a polar covalent bond.",
+      "Electronegativity is a relative measure on a scale (e.g., Pauling scale).",
+      "Fluorine has the highest electronegativity of all elements."
+    ]
+  },
+  {
+    "id": "mc-002",
+    "type": "multipleChoice",
+    "difficulty": "medium",
+    "prompt": "Which type of isomers are 2-butene cis and trans forms?",
+    "options": [
+      "Constitutional isomers",
+      "Enantiomers",
+      "Geometric (cis/trans) stereoisomers",
+      "Conformational isomers"
+    ],
+    "expectedAnswer": 2,
+    "hints": [
+      "These isomers have the same molecular formula and connectivity.",
+      "They differ in the spatial arrangement around a C=C double bond.",
+      "Restricted rotation around the double bond is key."
+    ]
+  }
+]

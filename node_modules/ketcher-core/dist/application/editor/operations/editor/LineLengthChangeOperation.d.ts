@@ -1,0 +1,9 @@
+import { Operation } from "../../../../domain/entities/Operation";
+import { EditorLineLength } from "../../../../utilities";
+export declare class LineLengthChangeOperation implements Operation {
+    private readonly lineLengthUpdate;
+    private readonly previousLineLength;
+    constructor(lineLengthUpdate: Partial<EditorLineLength>);
+    execute(): void;
+    invert(): void;
+}
